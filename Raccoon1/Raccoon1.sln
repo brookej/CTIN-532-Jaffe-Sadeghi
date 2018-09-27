@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raccoon1", "Assembly-CSharp.csproj", "{EB305911-6E0B-C413-3AD8-2818FE8A9F51}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raccoon1", "Raccoon1.csproj", "{12C06C92-C74D-162D-527E-720BDD963DEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EB305911-6E0B-C413-3AD8-2818FE8A9F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB305911-6E0B-C413-3AD8-2818FE8A9F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB305911-6E0B-C413-3AD8-2818FE8A9F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB305911-6E0B-C413-3AD8-2818FE8A9F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C06C92-C74D-162D-527E-720BDD963DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C06C92-C74D-162D-527E-720BDD963DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C06C92-C74D-162D-527E-720BDD963DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C06C92-C74D-162D-527E-720BDD963DEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
