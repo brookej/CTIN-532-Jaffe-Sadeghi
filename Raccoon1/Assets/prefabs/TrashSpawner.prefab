@@ -53,5 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashPrefab: {fileID: 1985920839519970, guid: 2daadce095e64c841a76d6fc239bb603,
     type: 2}
-  rangeX: 0.5
-  rangeY: 0.5
+  rangeX: 9
+  rangeY: 2

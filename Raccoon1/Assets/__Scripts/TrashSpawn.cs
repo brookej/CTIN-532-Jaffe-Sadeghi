@@ -18,6 +18,6 @@ public class TrashSpawn : MonoBehaviour {
         GameObject trashToSpawn = trashPrefab;
 
         //set location of trash
-        GameObject newTrash = Instantiate(trashToSpawn, new Vector3(Random.Range(rangeX, -rangeX), Random.Range(rangeY, -rangeY), this.GetComponent<Transform>().position.z), Quaternion.identity);
+        GameObject newTrash = Instantiate(trashToSpawn, new Vector3(Random.Range(rangeX, -rangeX), Random.Range(rangeY, -rangeY), 0), Quaternion.identity);
     }
 }
