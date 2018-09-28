@@ -29,7 +29,7 @@ public class MovementController2 : MonoBehaviour
 
 		{
 			Vector2 vec = new Vector2 (1, 0) * thrust;
-			rb.AddForce(vec * Time.deltaTime,0);
+			rb.AddForce(vec,0);
 
 		}
 
@@ -39,7 +39,7 @@ public class MovementController2 : MonoBehaviour
 
 		{
 			Vector2 vec = new Vector2 (-1, 0) * thrust;
-			rb.AddForce(vec * Time.deltaTime,0);
+			rb.AddForce(vec,0);
 
 		}
 
