@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrashBehavior : MonoBehaviour
 {
     public AudioSource collectSound;
+    public AudioClip collect;
     GameObject raccoonArm;
     float distanceToHand;
     public GameObject TrashRespawn;
@@ -13,7 +14,7 @@ public class TrashBehavior : MonoBehaviour
 
     void Start()
     {
-        collectSound = FindObjectOfType<AudioSource>();
+        collectSound = GetComponent<AudioSource>();
         raccoonArm = GameObject.Find("ClawArm");
     }
 
@@ -24,11 +25,21 @@ public class TrashBehavior : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                collectSound.Play();
-                spawn.SpawnTrash();
+                CollectTrash();
+                DeactivateTrash();
                 // To do later-- add point value to score
-                this.gameObject.SetActive(false);
             }
         }
+    }
+
+    void CollectTrash()
+    {
+        collectSound.PlayOneShot(collect);
+        spawn.trashTracker--;
+    } 
+
+    void DeactivateTrash()
+    {
+        this.gameObject.SetActive(false);
     }
 }

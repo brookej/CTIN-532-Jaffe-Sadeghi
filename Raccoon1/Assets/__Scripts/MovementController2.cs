@@ -21,7 +21,7 @@ public class MovementController2 : MonoBehaviour
 
 
 
-	void Update()
+	void FixedUpdate()
 
 	{
 

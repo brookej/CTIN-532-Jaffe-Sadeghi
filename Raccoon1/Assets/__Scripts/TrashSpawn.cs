@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class TrashSpawn : MonoBehaviour {
     public GameObject trashPrefab;
-    public float rangeX;
+    public float maxRangeX;
+    public float minRangeX;
     public float rangeY;
+    public TrashBehavior behavior;
+    public int trashTracker = 0;
 
     private void Start()
     {
         SpawnTrash();
     }
 
+    private void Update()
+    {
+        if (trashTracker <= 0)
+        {
+            SpawnTrash();
+        }
+    }
+
     public void SpawnTrash()
     {
+        trashTracker++;
         //spawn trash
         GameObject trashToSpawn = trashPrefab;
 
         //set location of trash
-        GameObject newTrash = Instantiate(trashToSpawn, new Vector3(Random.Range(rangeX, -rangeX), Random.Range(rangeY, -rangeY), 0), Quaternion.identity);
+        GameObject newTrash = Instantiate(trashToSpawn, new Vector3(Random.Range(this.transform.position.x+ minRangeX, (this.transform.position.x + maxRangeX)), Random.Range(rangeY, -rangeY)), Quaternion.identity);
     }
 }
