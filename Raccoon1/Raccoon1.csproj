@@ -308,6 +308,7 @@
     <Compile Include="Assets\__Scripts\OldScripts\TopMovement.cs" />
     <Compile Include="Assets\__Scripts\Restart.cs" />
     <Compile Include="Assets\__Scripts\RestartButton.cs" />
+    <Compile Include="Assets\__Scripts\Scorekeeper.cs" />
     <Compile Include="Assets\__Scripts\TrashBehavior.cs" />
     <Compile Include="Assets\__Scripts\TrashSpawn.cs" />
     <Compile Include="Assets\__Scripts\UnitySingleton.cs" />

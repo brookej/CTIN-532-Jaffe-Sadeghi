@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - face
-  - 
+  - parallax
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 341933027
     locked: 0
   - name: 1
     uniqueID: 694423261

@@ -10,14 +10,14 @@ public class Claw : MonoBehaviour {
     public GameObject closedClaw;
 
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             clawR.SetActive(false);
             clawL.SetActive(false);
             closedClaw.SetActive(true);
             clack.PlayOneShot(clackclip);
         }
-        else if(Input.GetMouseButtonUp(0))
+        else if(Input.GetKeyUp(KeyCode.Space))
         {
             clawR.SetActive(true);
             clawL.SetActive(true);

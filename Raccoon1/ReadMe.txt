@@ -1,6 +1,10 @@
-CTIN-532 2018 - Jaffe Sadeghi Vertical Slice (9/28)
+CTIN-532 2018 - Jaffe Sadeghi Vertical Slice (10/5)
 
-Credits
+Inputs:
+	Player 1 (Bottom Raccoon): A/D to move left/right
+	Player 2 (Top Raccoon): J/L to lean left/right, mouse to move claw arm, click to pick up objects.
+
+Credits:
 
 Music is Yakety Sax (Benny Hill Theme) by Boots Randolph and Spider Rich (1963)
 

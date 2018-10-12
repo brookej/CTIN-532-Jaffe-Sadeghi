@@ -31,5 +31,6 @@ public class TrashSpawn : MonoBehaviour {
 
         //set location of trash
         GameObject newTrash = Instantiate(trashToSpawn, new Vector3(Random.Range(this.transform.position.x+ minRangeX, (this.transform.position.x + maxRangeX)), Random.Range(rangeY, -rangeY)), Quaternion.identity);
+        newTrash.GetComponent<TrashBehavior>().spawn = this;
     }
 }
