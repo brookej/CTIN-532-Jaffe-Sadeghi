@@ -7,16 +7,14 @@ public class MovementController2 : MonoBehaviour
 
 {
 	public float thrust;
-	public Rigidbody2D rb;
-
+    public Rigidbody2D rb;
 
 
 	private void Start()
 
 	{
-
 		rb=GetComponent<Rigidbody2D>();
-
+        MetricManagerScript.instance.LogTime("starttime");
 	}
 
 
