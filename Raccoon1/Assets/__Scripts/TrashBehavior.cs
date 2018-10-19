@@ -11,11 +11,15 @@ public class TrashBehavior : MonoBehaviour
     public GameObject TrashRespawn;
     public float reachRange;
     public TrashSpawn spawn;
+    public int scoreValue;
+
+    public Scorekeeper scorekeeper;
 
     void Start()
     {
         collectSound = GetComponent<AudioSource>();
         raccoonArm = GameObject.Find("ClawArm");
+        scorekeeper = GameObject.Find("MasterScorekeeper").GetComponent<Scorekeeper>();
     }
 
     private void Update()
@@ -23,11 +27,11 @@ public class TrashBehavior : MonoBehaviour
         distanceToHand = Vector3.Distance(raccoonArm.transform.position, transform.position);
         if (distanceToHand < reachRange)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 CollectTrash();
                 DeactivateTrash();
-                // To do later-- add point value to score
+                scorekeeper.addScore(scoreValue);
             }
         }
     }
