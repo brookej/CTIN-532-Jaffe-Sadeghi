@@ -3,64 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SuspicionManager : MonoBehaviour {
-    private int currentSuspicionValue = 0;
+public class SuspicionManager : UnitySingleton {
+    private float currentSuspicionValue = 0;
     private int suspicionMax = 100;
     public Text suspicionLevelText;
     public int suspicionUpdateThreshold = 60;
-    public int suspicionDecreaseWithPose;
+    public GameObject movingArm;
+   
+    public Text GameOver;
+    public GameObject TryAgain;
 
+    public void Start()
+    {
+        movingArm = GameObject.Find("ArmHolder");    
+    }
 
     public void Update()
     {
         SuspicionUpdate();
         SuspicionDisplay();
 
-        if (Input.GetKey(KeyCode.R)&&Input.GetKey(KeyCode.Y))
+       if (currentSuspicionValue>=suspicionMax)
         {
-            TotallyCasualNotSuspicious();
-        }
-
-        if (currentSuspicionValue>=suspicionMax)
-        {
-            //end
+            EndGame();
         }
 
     }
 
     public void SuspicionUpdate()
     {
-        for (int i = 0; i < suspicionUpdateThreshold; i++)
-        {
-            if (i<suspicionUpdateThreshold)
-            {
-                i++;
-            }
-            else if (i==suspicionUpdateThreshold)
-            {
-                i = 0;
-                currentSuspicionValue++;
-            }
-        }
+        currentSuspicionValue += Time.deltaTime;
     }
 
     public void SuspicionDisplay()
     {
-        suspicionLevelText.text = "" + currentSuspicionValue;
+        suspicionLevelText.text = "%" + Mathf.Round(currentSuspicionValue);
     }
 
-    public void TotallyCasualNotSuspicious()
+
+    public void EndGame()
     {
-        //pose character
-            //deactivate current sprites
-            //activate fluster sprite as intermediary
-                //Time that so it has a few frames to read
-            //deactivate fluster sprite
-            //activate casual pose sprite
-            //play casual whistling sound
-        //decrease suspicion value
-        currentSuspicionValue = currentSuspicionValue - suspicionDecreaseWithPose;
-        //while posed, players can't move
+        Time.timeScale = 0;
+        movingArm.GetComponent<FaceMouse>().enabled=false;
+        GameOver.enabled = true;
+        TryAgain.gameObject.SetActive(true);
+
+        MetricManagerScript.instance.LogTime("endtime");
     }
-	
 }

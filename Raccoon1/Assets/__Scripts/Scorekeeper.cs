@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Scorekeeper : MonoBehaviour {
     public Text scoreText;
     public Text highScoreText;
-    int highScore;
-    int score;
+    public int highScore;
+    public int score;
 
     void Start () {
         score = 0;

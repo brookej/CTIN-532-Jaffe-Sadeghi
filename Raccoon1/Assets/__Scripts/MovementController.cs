@@ -4,19 +4,14 @@ using UnityEngine;
 
 
 public class MovementController : MonoBehaviour
-
 {
 	public float thrust;
 	public Rigidbody2D rb;
 
-
-
 	private void Start()
-
 	{
-
-		rb=GetComponent<Rigidbody2D>();
-
+        Time.timeScale = 1;
+        rb =GetComponent<Rigidbody2D>();
 	}
 
 
@@ -63,6 +58,8 @@ public class MovementController : MonoBehaviour
 
 		}
 
+
+       
 	}
 
 }

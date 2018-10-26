@@ -24,7 +24,7 @@ public class ButtonScript : MonoBehaviour {
 
     IEnumerator LoadScene()
     {
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSecondsRealtime(1.25f);
         SceneManager.LoadScene(desiredScene);
     }
 }
