@@ -10,12 +10,14 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
 	{
-        Cursor.visible = true;
+        
 		if (other.gameObject == Hat) {
 
             //Player.gameObject.SetActive(false);
             //GameOver.gameObject.SetActive (true);
             ((SuspicionManager)SuspicionManager.Instance).EndGame();
+
+            Cursor.visible = true;
         }
     }
 }
