@@ -12,9 +12,11 @@ public class SuspicionManager : UnitySingleton {
    
     public Text GameOver;
     public GameObject TryAgain;
+    bool ended;
 
     public void Start()
     {
+        ended = false;
         movingArm = GameObject.Find("ArmHolder");    
     }
 
@@ -23,8 +25,9 @@ public class SuspicionManager : UnitySingleton {
         SuspicionUpdate();
         SuspicionDisplay();
 
-       if (currentSuspicionValue>=suspicionMax)
+       if (currentSuspicionValue>=suspicionMax && ended == false)
         {
+            ended = true;
             EndGame();
         }
 

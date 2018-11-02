@@ -1495,6 +1495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650507369}
   - component: {fileID: 650507368}
+  - component: {fileID: 650507370}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -1513,7 +1514,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d7019a789dfe914eb1580f82ccb5a01, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.502
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1610,6 +1611,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &650507370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 650507367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953f9a62a167c334081020a36d7f8954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmusic: {fileID: 650507368}
 --- !u!1 &665538973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,8 +2473,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e1651dcc671b3064ea00855609a9b046, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 6d7019a789dfe914eb1580f82ccb5a01, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 0.691
   m_Pitch: 1
   Loop: 1
@@ -5034,7 +5047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b9e28f27d564d768331687e7d8489c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 1000
+  thrust: 750
   rb: {fileID: 1650001212}
 --- !u!61 &1650001215
 BoxCollider2D:

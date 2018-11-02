@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FaceMouse : MonoBehaviour {
-	
+
+
 
 	void Update () 
 	{
@@ -21,5 +22,6 @@ public class FaceMouse : MonoBehaviour {
 		                    );
 
 		transform.up = -direction;
-	}
+
+    }
 }
