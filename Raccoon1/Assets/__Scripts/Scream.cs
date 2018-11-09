@@ -21,11 +21,11 @@ public class Scream : MonoBehaviour
             
         }
 
-        else if (other.gameObject == FacePanic)
+       // else if (other.gameObject == FacePanic)
         {
 
-            FaceNormal.SetActive(true);
-            FacePanic.SetActive(false);
+            //FaceNormal.SetActive(true);
+            //FacePanic.SetActive(false);
 
         }
     }

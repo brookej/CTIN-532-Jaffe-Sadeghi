@@ -45,5 +45,6 @@ public class TrashBehavior : MonoBehaviour
     void DeactivateTrash()
     {
         this.gameObject.SetActive(false);
+        //need to change 
     }
 }
