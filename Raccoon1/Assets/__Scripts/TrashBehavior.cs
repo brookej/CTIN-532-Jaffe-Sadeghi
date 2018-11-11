@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//enumerator which defines the different trash types
+public enum TrashType
+{
+    Apple,
+    Sandwich
+}
+
 public class TrashBehavior : MonoBehaviour
 {
     public AudioSource collectSound;
@@ -12,6 +19,7 @@ public class TrashBehavior : MonoBehaviour
     public float reachRange;
     public TrashSpawn spawn;
     public int scoreValue;
+    public TrashType myType; //the type of this trash
 
     public Scorekeeper scorekeeper;
 
@@ -32,6 +40,16 @@ public class TrashBehavior : MonoBehaviour
                 CollectTrash();
                 DeactivateTrash();
                 scorekeeper.addScore(scoreValue);
+
+                //add to the trash collected per type table
+                if (scorekeeper.trashCollected.ContainsKey(myType)) //does the table already contain data for my trash type?
+                {
+                    //if yes, add to the type's record
+                    scorekeeper.trashCollected[myType] += 1;
+                }else{
+                    //if no, add the key to the record and initialize with 1
+                    scorekeeper.trashCollected.Add(myType, 1);
+                }
             }
         }
     }

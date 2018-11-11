@@ -9,7 +9,11 @@ public class Scorekeeper : MonoBehaviour {
     public int highScore;
     public int score;
 
+    //the table which tracks how many trash has been collected per type
+    public Dictionary<TrashType, int> trashCollected;
+
     void Start () {
+        trashCollected = new Dictionary<TrashType, int>(); //initiate the trash collected table (always do this for dictionaries!)
         score = 0;
         UpdateScore();
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore",0);
