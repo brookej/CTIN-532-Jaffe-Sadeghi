@@ -13,8 +13,6 @@ public class GameController : MonoBehaviour
 	public float waveWait;
 
 	public Text scoreText;
-	public Text restartText;
-	public Text gameOverText;
 
 	private bool gameOver;
 	private bool restart;
@@ -24,8 +22,6 @@ public class GameController : MonoBehaviour
 	{
 		gameOver = false;
 		restart = false;
-		restartText.text = "";
-		gameOverText.text = "";
 		score = 0;
 		UpdateScore ();
 		StartCoroutine (SpawnWaves ());
@@ -58,7 +54,6 @@ public class GameController : MonoBehaviour
 
 			if (gameOver)
 			{
-				restartText.text = "Press 'R' for Restart";
 				restart = true;
 				break;
 			}
@@ -78,7 +73,6 @@ public class GameController : MonoBehaviour
 
 	public void GameOver ()
 	{
-		gameOverText.text = "Game Over!";
 		gameOver = true;
 	}
 }

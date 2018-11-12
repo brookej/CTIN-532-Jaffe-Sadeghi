@@ -10,7 +10,7 @@ public class SuspicionManager : UnitySingleton {
     public int suspicionUpdateThreshold = 60;
     public GameObject movingArm;
    
-    public Text GameOver;
+    public GameObject GameOver;
     public GameObject TryAgain;
 
     bool endtime;
@@ -60,7 +60,7 @@ public class SuspicionManager : UnitySingleton {
 
         //ask about how to disable scripts like movementcontroller and claw
 
-        GameOver.enabled = true;
+        GameOver.SetActive(true);
         TryAgain.gameObject.SetActive(true);
 
         Cursor.visible = true;
