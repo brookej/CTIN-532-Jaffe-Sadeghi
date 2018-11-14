@@ -87,6 +87,7 @@
     <Compile Include="Assets\__Scripts\Scorekeeper.cs" />
     <Compile Include="Assets\__Scripts\Scream.cs" />
     <Compile Include="Assets\__Scripts\SingleTrashSpawn.cs" />
+    <Compile Include="Assets\__Scripts\SuccessScoreGetter.cs" />
     <Compile Include="Assets\__Scripts\SuspicionManager.cs" />
     <Compile Include="Assets\__Scripts\SuspicionManagerBackup.cs" />
     <Compile Include="Assets\__Scripts\TabMenuPopUp.cs" />

@@ -8,24 +8,15 @@ public class TrashSpawn : MonoBehaviour {
     public float minRangeX;
     public float rangeY;
     public TrashBehavior behavior;
-    public int trashTracker = 0;
 
     private void Start()
     {
         SpawnTrash();
     }
 
-    private void Update()
-    {
-        if (trashTracker <= 0)
-        {
-            SpawnTrash();
-        }
-    }
 
     public void SpawnTrash()
     {
-        trashTracker++;
         //spawn trash
         GameObject trashToSpawn = trashPrefab;
 
