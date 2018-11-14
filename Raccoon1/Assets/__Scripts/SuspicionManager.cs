@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SuspicionManager : UnitySingleton {
-    private float currentSuspicionValue = 100;
-    private int suspicionMax = 0;
-    public Text suspicionLevelText;
-    public int suspicionUpdateThreshold = 60;
+    public float TimeLeft = 100;
+    private int TimeUp = 0;
+    public Text timerText;
     public GameObject movingArm;
    
     public GameObject GameOver;
@@ -24,14 +23,14 @@ public class SuspicionManager : UnitySingleton {
 
     public void Update()
     {
-        SuspicionUpdate();
-        SuspicionDisplay();
+        TimerUpdate();
+        TimerDisplay();
 
         //var end : EndGame[];
         //int end = 1;
         //I'm fucking idiot, those aren't variables
 
-       if (currentSuspicionValue<=suspicionMax && endtime == false)
+       if (TimeLeft<=TimeUp && endtime == false)
         {
             endtime = true;
             EndGame();
@@ -42,14 +41,14 @@ public class SuspicionManager : UnitySingleton {
 
     }
 
-    public void SuspicionUpdate()
+    public void TimerUpdate()
     {
-        currentSuspicionValue -= Time.deltaTime;
+        TimeLeft -= Time.deltaTime;
     }
 
-    public void SuspicionDisplay()
+    public void TimerDisplay()
     {
-        suspicionLevelText.text = "⌚ " + Mathf.Round(currentSuspicionValue);
+        timerText.text = "" + Mathf.Round(TimeLeft);
     }
 
 
@@ -57,8 +56,6 @@ public class SuspicionManager : UnitySingleton {
     {
         Time.timeScale = 0;
         movingArm.GetComponent<FaceMouse>().enabled=false;
-
-        //ask about how to disable scripts like movementcontroller and claw
 
         GameOver.SetActive(true);
         TryAgain.gameObject.SetActive(true);

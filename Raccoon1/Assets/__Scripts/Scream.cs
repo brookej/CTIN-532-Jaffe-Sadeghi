@@ -13,11 +13,8 @@ public class Scream : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("something entered trigger");
         if (other.gameObject == head)
         {
-            Debug.Log("it's the head!");
-
             FaceNormal.SetActive(false);
             FacePanic.SetActive(true);
             Hat.SetActive(false);
@@ -36,15 +33,11 @@ public class Scream : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("something left trigger");
         if (other.gameObject == head)
         {
-            Debug.Log("it's the head!");
-
             FaceNormal.SetActive(true);
             FacePanic.SetActive(false);
             Hat.SetActive(true);
-
         }
     }
 }
