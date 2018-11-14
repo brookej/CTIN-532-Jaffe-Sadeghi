@@ -21,8 +21,6 @@ public class Exit : MonoBehaviour {
             movingArm.GetComponent<FaceMouse>().enabled = false;
             SuccessScreen.SetActive(true);
             Time.timeScale = 0;
-            //PlayersScore = "" + ScoreDataSource.score;
-            //FinalHighScore = ScoreDataSource.highScore;
         }
     }
 }

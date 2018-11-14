@@ -57,7 +57,6 @@ public class TrashBehavior : MonoBehaviour
     void CollectTrash()
     {
         collectSound.PlayOneShot(collect);
-        spawn.trashTracker--;
     } 
 
     void DeactivateTrash()

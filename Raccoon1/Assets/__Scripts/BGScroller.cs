@@ -12,6 +12,10 @@ public class BGScroller : MonoBehaviour {
 
     public float backgroundSize;
     public float parallaxSpeed;
+    public float cubicleStart;
+    public GameObject Cubicle1;
+
+    private float parallaxPause;
 
     private void Start()
     {
@@ -66,6 +70,16 @@ public class BGScroller : MonoBehaviour {
         {
             ScrollRight();
         }
+
+        if (cameraTransform.position.x < cubicleStart)
+        {
+            Cubicle1.SetActive(false);
+        }
+        else if (cameraTransform.position.x > cubicleStart)
+        {
+            Cubicle1.SetActive(true);
+        }
+
     }
 
     private void LateUpdate()
