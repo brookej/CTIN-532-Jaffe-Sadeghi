@@ -1308,8 +1308,8 @@ MonoBehaviour:
     type: 2}
   xMin: -10
   xMax: 10
-  yMin: -10
-  yMax: 10
+  yMin: -8
+  yMax: 8
 --- !u!4 &495827143
 Transform:
   m_ObjectHideFlags: 0
@@ -1380,6 +1380,7 @@ GameObject:
   - component: {fileID: 650507369}
   - component: {fileID: 650507368}
   - component: {fileID: 650507370}
+  - component: {fileID: 650507371}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -1507,6 +1508,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmusic: {fileID: 650507368}
+--- !u!114 &650507371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 650507367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59499f1e07c594d138ca1998b36c684a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &652912531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,10 +4118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf250c8a3a2d4c269d65b76005d210b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hat: {fileID: 1179587799}
+  Hat: {fileID: 1072090838}
   Pos: {fileID: 0}
-  appleRigidbody: {fileID: 0}
-  sandwichRigidbody: {fileID: 0}
+  appleRigidbody: {fileID: 1985920839519970, guid: b966c72a83eef4283a320e3320da54fa,
+    type: 2}
+  sandwichRigidbody: {fileID: 1985920839519970, guid: c38b29878132b4dcf8957de971153a6a,
+    type: 2}
 --- !u!1 &1162079795
 GameObject:
   m_ObjectHideFlags: 0
@@ -5238,7 +5252,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1609784165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5250,7 +5264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14902d04b54014cdbae7be52ae19f1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPrefab: {fileID: 0}
+  trashPrefab: {fileID: 1985920839519970, guid: b841aff6d3c5f4a7593454adc3f37a66,
+    type: 2}
   xMin: 0
   xMax: 0
   yMin: 0
@@ -5361,7 +5376,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0042409897, y: 0.4396491}
+  m_Offset: {x: 0.0042409897, y: -0.3777331}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5372,7 +5387,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.3617, y: 10.21172}
+  m_Size: {x: 6.3617, y: 8.576956}
   m_EdgeRadius: 0
 --- !u!212 &1650001216
 SpriteRenderer:
