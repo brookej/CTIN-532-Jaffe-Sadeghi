@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d488d7eb235760d4695618f013c36e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredScene: Controls
+  desiredScene: YourMission
   buttonSource: {fileID: 36167085}
   buttonSound: {fileID: 8300000, guid: dea0fa2e99fa12d4e8b7b9c18e129c51, type: 3}
   vol: 0
