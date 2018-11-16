@@ -31,6 +31,7 @@ public class MetricManagerScript : MonoBehaviour {
 	
 	//When the game quits we'll actually write the file.
 	void OnApplicationQuit(){
+        Debug.Log("Calling all Metrics");
 		string time = System.DateTime.UtcNow.ToString ();string dateTime = System.DateTime.Now.ToString (); //Get the time to tack on to the file name
 		time = time.Replace ("/", "-"); //Replace slashes with dashes, because Unity thinks they are directories..
 		time = time.Replace (" ", "_"); //empty spaces also don't seem to work with Unity

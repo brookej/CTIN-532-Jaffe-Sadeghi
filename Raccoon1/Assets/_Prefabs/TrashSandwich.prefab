@@ -200,8 +200,8 @@ MonoBehaviour:
     type: 2}
   reachRange: 1.5
   spawn: {fileID: 114767147964766094, guid: b3a2322d3f6fb384d9036c094395b81d, type: 2}
-  scoreValue: 10
-  myType: 0
+  scoreValue: 50
+  myType: 1
   scorekeeper: {fileID: 0}
 --- !u!212 &212771529749518836
 SpriteRenderer:

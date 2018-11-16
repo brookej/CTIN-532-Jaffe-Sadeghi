@@ -56,4 +56,4 @@ MonoBehaviour:
   maxRangeX: 5
   minRangeX: 5
   rangeY: 0
-  behavior: {fileID: 0}
+  behavior: {fileID: 114843022943771620, guid: 078eca4dcac55cc45a12784837c6c80d, type: 2}
