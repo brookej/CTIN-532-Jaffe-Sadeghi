@@ -37,9 +37,11 @@ public class TrashBehavior : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+
                 CollectTrash();
                 DeactivateTrash();
                 scorekeeper.addScore(scoreValue);
+               
 
                 //add to the trash collected per type table
                 if (scorekeeper.trashCollected.ContainsKey(myType)) //does the table already contain data for my trash type?

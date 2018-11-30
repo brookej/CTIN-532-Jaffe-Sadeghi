@@ -8,7 +8,7 @@ public class MovementController2 : MonoBehaviour
 {
 	public float thrust;
     public Rigidbody2D rb;
-
+    public bool controlEnabled;
 
 	private void Start()
 

@@ -17,42 +17,51 @@ public class DestroyByContact : MonoBehaviour
 	{
         
 		if (other.gameObject == Hat) {
-
             //Player.gameObject.SetActive(false);
             //GameOver.gameObject.SetActive (true);
-            ((SuspicionManager)(SuspicionManager.Instance)).EndGame();
 
             // Instantiate the projectile at the position and rotation of this transform
             Rigidbody clone;
-            clone = Instantiate(Pos, transform.position, transform.rotation);
+            //clone = Instantiate(Pos, transform.position, transform.rotation);
 
             // Give the cloned object an initial velocity along the current
             // object's Z axis
-            clone.velocity = transform.TransformDirection(Vector2.right * 10);
+            //clone.velocity = transform.TransformDirection(Vector2.right * 10);
 
             // Iterate through the list of collected trash types
-            foreach (KeyValuePair<TrashType,int> keyValue in FindObjectOfType<Scorekeeper>().trashCollected)
+            Scorekeeper sk = FindObjectOfType<Scorekeeper>();
+            if (!sk.exploded)
             {
+                Debug.Log("spawning trashes");
                 GameObject spawnedTrash = null;
-                //spawn different prefabs based on the trash type
-                switch (keyValue.Key)
+
+                Debug.Log(sk.trashCollected[TrashType.Apple]);
+                for (int i = 0; i < sk.trashCollected[TrashType.Apple]; i++)
                 {
-                    case TrashType.Apple:
-                        spawnedTrash = Instantiate(appleRigidbody, transform.position, transform.rotation);
-                        break;
-                    case TrashType.Sandwich:
-                        spawnedTrash = Instantiate(sandwichRigidbody, transform.position, transform.rotation);
-                        break;
+                    Debug.Log("spawn apple");
+                    spawnedTrash = Instantiate(appleRigidbody, other.transform.position, transform.rotation);
+                    if (spawnedTrash != null) //if trash is spawned successfully...
+                    {
+                        //launch in a random direction
+                        spawnedTrash.GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle * 10;
+                    }
                 }
 
-                if (spawnedTrash != null) //if trash is spawned successfully...
+                for (int j = 0; j < sk.trashCollected[TrashType.Sandwich]; j++)
                 {
-                    //launch in a random direction
-                    spawnedTrash.GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle * 10;
+                    spawnedTrash = Instantiate(sandwichRigidbody, other.transform.position, transform.rotation);
+                    if (spawnedTrash != null) //if trash is spawned successfully...
+                    {
+                        //launch in a random direction
+                        spawnedTrash.GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle * 10;
+                    }
                 }
 
+                sk.exploded = true;
             }
 
+
+            ((SuspicionManager)(SuspicionManager.Instance)).EndGame();
 
             Cursor.visible = true;
 

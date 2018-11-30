@@ -9,15 +9,20 @@ public class Scorekeeper : MonoBehaviour {
     public int highScore;
     public int score;
 
+    public bool exploded { get; set; }
+
     //the table which tracks how many trash has been collected per type
     public Dictionary<TrashType, int> trashCollected;
 
     void Start () {
         trashCollected = new Dictionary<TrashType, int>(); //initiate the trash collected table (always do this for dictionaries!)
+        trashCollected.Add(TrashType.Apple, 0);
+        trashCollected.Add(TrashType.Sandwich, 0);
         score = 0;
         UpdateScore();
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore",0);
         highScore = PlayerPrefs.GetInt("HighScore");
+        exploded = false;
 	}
 
     public void addScore(int newScoreValue)

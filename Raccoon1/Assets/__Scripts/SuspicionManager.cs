@@ -8,6 +8,9 @@ public class SuspicionManager : UnitySingleton {
     private int TimeUp = 0;
     public Text timerText;
     public GameObject movingArm;
+    public GameObject clawArmWithSound;
+
+    public GameObject successScreen;
    
     public GameObject GameOver;
     public GameObject TryAgain;
@@ -18,27 +21,19 @@ public class SuspicionManager : UnitySingleton {
     public void Start()
     {
         endtime = false;
-        movingArm = GameObject.Find("ArmHolder");    
+        movingArm = GameObject.Find("ArmHolder");
     }
 
     public void Update()
     {
         TimerUpdate();
         TimerDisplay();
-
-        //var end : EndGame[];
-        //int end = 1;
-        //I'm fucking idiot, those aren't variables
-
+        
        if (TimeLeft<=TimeUp && endtime == false)
         {
             endtime = true;
-            EndGame();
-
+            TimeIsUp();
         } 
-
-        //Add a boolean to reference the "endtime"
-
     }
 
     public void TimerUpdate()
@@ -54,14 +49,41 @@ public class SuspicionManager : UnitySingleton {
 
     public void EndGame()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.4f;
         movingArm.GetComponent<FaceMouse>().enabled=false;
 
         GameOver.SetActive(true);
         TryAgain.gameObject.SetActive(true);
 
+        clawArmWithSound.GetComponent<AudioSource>().enabled = false;
+
         Cursor.visible = true;
 
         MetricManagerScript.instance.LogTime("endtime");
+        StopTimeOnFall();
     }
+
+    public void StopTimeOnFall()
+    {
+        StartCoroutine(EndGameWait()); 
+    }
+
+    public void TimeIsUp()
+    {
+        successScreen.SetActive(true);
+        Time.timeScale = 0f;
+        movingArm.GetComponent<FaceMouse>().enabled = false;
+        MetricManagerScript.instance.LogTime("TimeOutTime");
+
+        clawArmWithSound.GetComponent<AudioSource>().enabled = false;
+
+        Cursor.visible = true;
+    }
+
+    IEnumerator EndGameWait()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        Time.timeScale = 0.0f;
+    }
+
 }

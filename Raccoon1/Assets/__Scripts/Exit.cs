@@ -12,6 +12,8 @@ public class Exit : MonoBehaviour {
     public Text FinalHighScore;
     public GameObject movingArm;
 
+    public Scorekeeper scorekeeper;
+
     void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -19,6 +21,7 @@ public class Exit : MonoBehaviour {
         if (other.gameObject == player)
         {
             movingArm.GetComponent<FaceMouse>().enabled = false;
+            scorekeeper.addScore(100);
             SuccessScreen.SetActive(true);
             Time.timeScale = 0;
         }
